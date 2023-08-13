@@ -13,6 +13,8 @@ public class Game1 implements GameInterface {
         System.out.println ("go left 1" );
     }
 
+
+
     public void right(){
         System.out.println ("go right 1" );
     }
