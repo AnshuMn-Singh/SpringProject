@@ -1,4 +1,4 @@
-package module2MoreOnDependencyInjection.a4BusinessLoginSpring;
+package module3.a2LazyInitializer;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
@@ -6,10 +6,10 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ComponentScan
-public class BusinessLoginLaunch {
+public class LazyInitializer {
     public static void main ( String[] args ) {
-        var context = new AnnotationConfigApplicationContext (BusinessLoginLaunch.class);
-
-        System.out.println (context.getBean ( BusinessCalculationService.class ).findMax () );
+        var context = new AnnotationConfigApplicationContext ( LazyInitializer.class );
+        context.getBean ( ClassB.class).doSomething();
     }
 }
+
