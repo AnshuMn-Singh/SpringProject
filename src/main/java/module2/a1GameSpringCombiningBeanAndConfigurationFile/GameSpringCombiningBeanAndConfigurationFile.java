@@ -1,5 +1,6 @@
 package module2.a1GameSpringCombiningBeanAndConfigurationFile;
 
+import org.springframework.beans.BeansException;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 
@@ -16,10 +17,12 @@ public class GameSpringCombiningBeanAndConfigurationFile {
     }
 
     public static void main ( String[] args ) {
-        var context = new AnnotationConfigApplicationContext ( GameSpringCombiningBeanAndConfigurationFile.class );
-
-        context.getBean ( GameInterface.class ).up ( );
-        context.getBean ( GameRunner.class ).run ( );
+        try (var context = new AnnotationConfigApplicationContext ( GameSpringCombiningBeanAndConfigurationFile.class )) {
+            context.getBean ( GameInterface.class ).up ( );
+            context.getBean ( GameRunner.class ).run ( );
+        } catch (BeansException e) {
+            e.printStackTrace();
+        }
     }
 }
 

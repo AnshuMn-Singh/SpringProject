@@ -2,11 +2,13 @@ package module3.a5JakartaExplore;
 
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
-import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.beans.BeansException;
+// import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Component;
+// import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 
@@ -37,8 +39,11 @@ class DataService{
 @ComponentScan
 public class CdiContextAppLauncher {
     public static void main ( String[] args ) {
-        var context = new AnnotationConfigApplicationContext ( CdiContextAppLauncher.class);
-        Arrays.stream ( context.getBeanDefinitionNames ( )).forEach ( System.out::println );
-        System.out.println (context.getBean ( BusinessService.class ).getDataService () );
+        try (var context = new AnnotationConfigApplicationContext ( CdiContextAppLauncher.class)) {
+            Arrays.stream ( context.getBeanDefinitionNames ( )).forEach ( System.out::println );
+            System.out.println (context.getBean ( BusinessService.class ).getDataService () );
+        } catch (BeansException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -1,5 +1,6 @@
 package module2MoreOnDependencyInjection.a3ConstructorInjection;
 
+import org.springframework.beans.BeansException;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -32,10 +33,12 @@ class Dependency2{}
 @ComponentScan
 public class ConstructorDependencyInjection {
     public static void main ( String[] args ) {
-        var context = new AnnotationConfigApplicationContext ( ConstructorDependencyInjection.class );
-
-        System.out.println (context.getBean ( YourBusinessClass.class ) );
+        try (var context = new AnnotationConfigApplicationContext ( ConstructorDependencyInjection.class )) {
+            System.out.println (context.getBean ( YourBusinessClass.class ) );
 //        Arrays.stream(context.getBeanDefinitionNames ()).forEach ( System.out::println );
+        } catch (BeansException e) {
+            e.printStackTrace();
+        }
     }
 }
 

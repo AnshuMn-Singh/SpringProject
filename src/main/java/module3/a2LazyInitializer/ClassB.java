@@ -9,8 +9,8 @@ public class ClassB {
     private ClassA classA;
 
     public ClassB ( ClassA classA ) {
-        System.out.println ("some initializer lazy" );
         this.classA = classA;
+        System.out.println ("some initializer lazy" + this.classA );
     }
 
     void  doSomething(){

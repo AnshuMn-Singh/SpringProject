@@ -6,7 +6,6 @@ import java.io.Serializable;
 
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class Course implements Serializable {
-    private static final long serialVerUUID = 1L;
     private int id;
     private String topic;
     private String author;

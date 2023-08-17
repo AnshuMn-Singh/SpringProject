@@ -41,7 +41,8 @@ class SomeDependency{
 @ComponentScan
 public class PostConstructAndPreDestroyAppLauncher {
     public static void main ( String[] args ) {
-        var context = new AnnotationConfigApplicationContext ( PostConstructAndPreDestroyAppLauncher.class );
-        Arrays.stream ( context.getBeanDefinitionNames ()).forEach ( System.out::println );
+        try (var context = new AnnotationConfigApplicationContext ( PostConstructAndPreDestroyAppLauncher.class )) {
+            Arrays.stream ( context.getBeanDefinitionNames ()).forEach ( System.out::println );
+        }
     }
 }

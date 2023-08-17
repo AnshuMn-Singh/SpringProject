@@ -1,6 +1,6 @@
 package module3.a7SpringSterotypeAnnotations;
 
-import org.springframework.stereotype.Component;
+// import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
     //@Component

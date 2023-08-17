@@ -1,5 +1,6 @@
 package module2MoreOnDependencyInjection.a2SetterInjection;
 
+import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
@@ -39,10 +40,12 @@ class Dependency2{}
 @ComponentScan
 public class SetterDependencyInjection {
     public static void main ( String[] args ) {
-        var context = new AnnotationConfigApplicationContext ( SetterDependencyInjection.class );
-
-        System.out.println (context.getBean ( YourBusinessClass.class ) );
+        try (var context = new AnnotationConfigApplicationContext ( SetterDependencyInjection.class )) {
+            System.out.println (context.getBean ( YourBusinessClass.class ) );
 //        Arrays.stream(context.getBeanDefinitionNames ()).forEach ( System.out::println );
+        } catch (BeansException e) {
+            e.printStackTrace();
+        }
     }
 }
 

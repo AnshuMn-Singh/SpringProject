@@ -1,5 +1,6 @@
 package module2.a2GameSpringUsingComponentsForObjects;
 
+import org.springframework.beans.BeansException;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -16,10 +17,12 @@ public class GameSpringUsingComponentsForObjects {
     }
 
     public static void main ( String[] args ) {
-        var context = new AnnotationConfigApplicationContext ( GameSpringUsingComponentsForObjects.class );
-
-        context.getBean ( GameInterface.class ).up ( );
-        context.getBean ( GameRunner.class ).run ( );
+        try (var context = new AnnotationConfigApplicationContext ( GameSpringUsingComponentsForObjects.class )) {
+            context.getBean ( GameInterface.class ).up ( );
+            context.getBean ( GameRunner.class ).run ( );
+        } catch (BeansException e) {
+            e.printStackTrace();
+        }
     }
 }
 

@@ -7,7 +7,7 @@ public class ClassB{
     private ClassA classA;
 
     public ClassB ( ClassA classA ) {
-        System.out.println ("some initializer" );
         this.classA = classA;
+        System.out.println ("some initializer" + this.classA );
     }
 }
