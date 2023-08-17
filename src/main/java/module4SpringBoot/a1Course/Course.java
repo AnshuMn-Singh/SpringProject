@@ -31,6 +31,6 @@ public class Course implements Serializable {
 
     @Override
     public String toString ( ) {
-        return "id=" + id + ", topic='" + topic + ", author='" + author;
+        return "Course [ id=" + id + ", topic='" + topic + "', author='" + author + "' ]";
     }
 }
