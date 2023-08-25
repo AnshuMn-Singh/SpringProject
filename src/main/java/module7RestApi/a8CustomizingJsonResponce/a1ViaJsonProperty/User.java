@@ -9,7 +9,7 @@ import java.time.LocalDate;
 public class User {
     private Integer id;
 
-    @JsonProperty("user_name")
+    @JsonProperty("user")
     @Size(min = 2, message = "name can't be less than 2 characters")
     private String name;
 

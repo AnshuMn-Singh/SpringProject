@@ -11,6 +11,5 @@ import java.util.TimeZone;
 public class App7_9 {
     public static void main ( String[] args ) {
         SpringApplication.run ( App7_9.class, args );
-        System.out.println("TimeZone.getTimeZone(\"UTC\") = " + Date.from(Instant.now()).getTime());
     }
 }
