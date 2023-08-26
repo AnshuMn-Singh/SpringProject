@@ -20,6 +20,8 @@ class RadixSort implements SortingAlgorithm {}
 class ComplexAlgorithm {
     @Autowired
     private SortingAlgorithm algorithm;
+
+    
 }
 
 @Component

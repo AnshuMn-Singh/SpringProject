@@ -3,10 +3,6 @@ package module7RestApi.a9RestAPIConnectionToJPAandH2;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.time.Instant;
-import java.util.Date;
-import java.util.TimeZone;
-
 @SpringBootApplication
 public class App7_9 {
     public static void main ( String[] args ) {

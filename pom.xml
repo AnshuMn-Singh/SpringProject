@@ -122,7 +122,42 @@
       <version>3.1.2</version>
     </dependency>
 
+<!--  h2  database-->
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <version>2.2.220</version>
+    </dependency>
 
+
+
+<!--    swagger docs-->
+    <dependency>
+      <groupId>org.springdoc</groupId>
+      <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+      <version>2.0.0-M7</version>
+    </dependency>
+
+<!--    xml formtter-->
+<!--    <dependency>-->
+<!--      <groupId>com.fasterxml.jackson.dataformat</groupId>-->
+<!--      <artifactId>jackson-dataformat-xml</artifactId>-->
+<!--      <version>2.15.2</version>-->
+<!--    </dependency>-->
+
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-hateoas</artifactId>
+      <version>3.1.2</version>
+    </dependency>
+
+<!--   spring security management-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-security</artifactId>
+      <version>3.1.1</version>
+    </dependency>
 
   </dependencies>
   <build>
