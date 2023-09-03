@@ -1,4 +1,4 @@
-package demo;
+package a1Start;
 
 public class Student {
     private int studentId;

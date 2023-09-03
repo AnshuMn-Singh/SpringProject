@@ -1,4 +1,6 @@
-import demo.Student;
+package a1Start;
+
+import a1Start.Student;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
